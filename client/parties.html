@@ -120,13 +120,7 @@
 <template name="attendance">
   <div class="attendance well well-small">
     <div class="muted who"><b>Farmers working this land</b></div>
-    {{#if public}}
-      <div>
-        <b>Everyone</b>
-        <span class="label label-inverse pull-right">Invited</span>
-      </div>
-    {{/if}}
-
+    {{#if rsvps}}
     {{#each rsvps}}
       <div>
         {{rsvpName}}
@@ -141,6 +135,12 @@
         {{/if}}
       </div>
     {{/each}}
+    {{else}}
+      <div>
+        <b>This land is available! Start farming it now...</b>
+      </div>
+    {{/if}}
+
 
     {{#unless public}}
       {{#each outstandingInvitations}}
