@@ -84,18 +84,22 @@
 </template>
 
 <template name="details">
-  <div class="well well-small">
+  <div class="well">
     {{#if party}}
       {{#with party}}
         <h3>{{title}}</h3>
-        <div class="postedby"><small>Posted by:</em> {{creatorName}}</small></div>
-        <div class="description"><em class="light">About this parcel:</em> {{description}}</div>
-        <div class="dreamveggies"><em class="light">Special requests:</em> {{dreamveggies}}</div>
+        <div class="postedby"><small>Posted by:</em>
+        {{creatorName}}</small></div>
+<dl>
+  <dt>About this parcel</dt>
+  <dd>{{description}}</dd>
+  <dt style="margin-top:20px">Special requests</dt>
+  <dd>{{dreamveggies}}</dd>
+</dl>
 
         <div class="rsvp-buttons">
           {{#if currentUser}}
             {{#if farmOwner}}
-              You posted this parcel. Thank you for being a part of ParcelKendallSq! 
             {{else}}
                 <input type="button" value="Farm this land" class="btn btn-success rsvp_yes {{maybeChosen "yes"}}">
                 <input type="button" value="Stop farming this land." class="btn rsvp_no {{maybeChosen "no"}}">
@@ -108,7 +112,7 @@
         {{> attendance}}
 
         {{#if canRemove}}
-          <div class="alert alert-info"><small>
+          <div class="alert alert-info" style="margin-top:20px"><small>
               You posted this parcel and nobody is signed up to farm it, so if you like, you could
               <b><a href="#" class="remove">delete this listing</a></b>.
           </small></div>
