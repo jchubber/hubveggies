@@ -169,7 +169,7 @@ Template.map.rendered = function () {
       var updateLabels = function (group) {
         group.attr("id", function (party) { return party._id; })
         .text(function (party) {
-          return attending(party)>0 ? "F" : "";
+          return attending(party)>0 ? "P" : "";
         })
         .attr("x", function (party) { return party.x * 500; })
         .attr("y", function (party) { return party.y * 500 + radius(party)/2 })
