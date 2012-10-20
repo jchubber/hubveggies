@@ -45,7 +45,8 @@ input.chosen {
 .map {
     background-image: url('/kendallsq.png');
     background-position: 0;
-    width: 500px;
+    background-repeat: no-repeat;
+    width: 760px;
     height: 500px;
 }
 
@@ -82,14 +83,26 @@ input.chosen {
     stroke: red;
 }
 
-.attribution {
+.customfooter {
     position: absolute;
+    background: #afcd49;
+    background-position: 0;
     bottom: 0;
-    background-color: white;
-    padding: 3px;
-    padding-bottom: 0;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 35px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 15px;
 }
 
+
 .green {
-    color: green;
+    color: #afcd49;
+}
+
+.light {
+    color: #ccc;
 }
