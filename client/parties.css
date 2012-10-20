@@ -42,15 +42,10 @@ input.chosen {
     font-weight: bold;
 }
 
-#mapcontainer {
-    width: 100%;
-    text-align: center;
-}
-
 .map {
-    background-image: url('/cambridge.png');
+    background-image: url('/kendallsq.png');
     background-position: 0;
-    width: 1258px;
+    width: 500px;
     height: 500px;
 }
 
