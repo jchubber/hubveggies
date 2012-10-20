@@ -78,8 +78,6 @@
 
         <div class="description">{{description}}</div>
 
-        {{> attendance}}
-
         <div class="rsvp-buttons">
           {{#if currentUser}}
             {{#if farmOwner}}
@@ -97,6 +95,8 @@
             <i>Sign in to grow veggies on this garden.</i>
           {{/if}}
         </div>
+
+        {{> attendance}}
 
         {{#if canRemove}}
           <div class="alert alert-info"><small>
