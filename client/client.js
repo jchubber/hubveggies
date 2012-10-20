@@ -150,6 +150,9 @@ Template.map.rendered = function () {
         .attr("class", function (party) {
           return party.public ? "public" : "private";
         })
+        .attr("class", function (party) {
+          return attending(party)>0 ? "farming" : "idle";
+        })
         .style('opacity', function (party) {
           return selected === party._id ? 1 : 0.6;
         });
@@ -165,7 +168,9 @@ Template.map.rendered = function () {
       // Label each with the current attendance count
       var updateLabels = function (group) {
         group.attr("id", function (party) { return party._id; })
-        .text(function (party) {return attending(party) || '';})
+        .text(function (party) {
+          return attending(party)>0 ? "F" : "";
+        })
         .attr("x", function (party) { return party.x * 500; })
         .attr("y", function (party) { return party.y * 500 + radius(party)/2 })
         .style('font-size', function (party) {

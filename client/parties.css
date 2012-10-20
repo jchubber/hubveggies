@@ -60,6 +60,14 @@ input.chosen {
     fill: #DA4F49;
 }
 
+.map circle.farming {
+    fill: green;
+}
+
+.map circle.idle {
+    fill: blue;
+}
+
 .map text {
     text-anchor: middle;
     fill: white;
@@ -80,4 +88,8 @@ input.chosen {
     background-color: white;
     padding: 3px;
     padding-bottom: 0;
+}
+
+.green {
+    color: green;
 }
