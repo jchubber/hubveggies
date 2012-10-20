@@ -2,6 +2,31 @@
     padding: 20px 0;
 }
 
+.logospace {
+    margin-left: 50px;
+}
+
+.loginbuttons {
+    float: right;
+    padding-right: 20px;
+}
+
+.instructions {
+    clear: both;
+    background-color: #ddd;
+    height: 120px;
+    text-align: center;
+    width: 100%;
+}
+
+.instructions .btn{
+    display: inline-block;
+}
+
+.instructions .divider{
+    display: inline-block;
+}
+
 .details {
     margin-top: -18px;
 }
