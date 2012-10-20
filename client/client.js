@@ -28,8 +28,15 @@ Template.details.anyParties = function () {
 Template.details.creatorName = function () {
   var owner = Meteor.users.findOne(this.owner);
   if (owner._id === Meteor.userId())
-    return "me";
+    return "you";
   return displayName(owner);
+};
+
+Template.details.farmOwner = function () {
+  var owner = Meteor.users.findOne(this.owner);
+  if (owner._id === Meteor.userId())
+    return true;
+  return false;
 };
 
 Template.details.canRemove = function () {
