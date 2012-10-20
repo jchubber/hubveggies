@@ -21,27 +21,38 @@
         <div class="header row">
           <div class="span8 logospace">
             <span style="font-size: 24px;">
-              <i class="icon-leaf icon-large green"></i>
+              <i class="icon-leaf green"></i>
             </span>
-            <h1 style="margin-bottom: 0px; margin-left: 15px; display: inline;"><span class="green">Parcel</span>KendallSq</h1>
+            <h1 class="logo"><span class="green">Parcel</span>KendallSq</h1>
           </div>
           <div class="loginbuttons" >
               {{loginButtons}}
           </div>
           <div class="instructions">
-            <h2 style="text-align: center;">Turn idle backyards into fresh fruits and veggies.</h2>
+            <h2 class="tagline">Turn idle backyards into fresh fruits and veggies.</h2>
             <div class="self-select">
-              <button class="havegardenspace btn" onclick="$('.owner-instructions').show(); $('.self-select').hide();">I Have Garden Space</button><div class="divider">Divider</div><button class="needgardenspace btn" onclick="$('.farmer-instructions').show(); $('.self-select').hide();">I need space to grow veggies</button>
+              <button class="havegardenspace btn" onclick="$('.owner-instructions').show(); $('.self-select').hide();">I Have Garden Space</button>
+              <div class="divider">
+                < Which one are you? >
+              </div>
+              <button class="needgardenspace btn" onclick="$('.farmer-instructions').show(); $('.self-select').hide();">I need space to grow veggies</button>
             </div>
             <div class="owner-instructions" style="display: none;">
-              <div>1. List your backyard, rooftop, or other idle growing space.</div>
-              <div>2. Approve people to farm on your parcel.</div>
-              <div>3. Get 20% of the fresh vegetables farmers grow in your parcel!</div>
+              <div class="instructionsThirds "><h3 style="display:inline;">1.</h3> List your backyard, rooftop, or other idle growing space.</div>
+              <div class="instructionsThirds middle"><h3 style="display:inline;">2.</h3> Approve guest growers to grow on your space.</div>
+              <div class="instructionsThirds "><h3 style="display:inline;">3.</h3> Get 20% of the fresh vegetables grown on your parcel!</div>
+              <div class="instructionsGoBack">
+                <a onclick="$('.owner-instructions').hide(); $('.self-select').show();"><<< Back</a>
+              </div>
             </div>
             <div class="farmer-instructions" style="display: none;">
-              <div>1. Find an idle growing space near you.</div>
-              <div>2. Plant fruits, veggies, or other nice things.</div>
-              <div>3. When you harvest, share 20% of the goodies with the parcel owner and keep the rest for yourself!</div>
+              <div class="instructionsThirds">1. Find an idle growing space near you.</div>
+              <div class="instructionsThirds">2. Plant fruits, veggies, or other nice things.</div>
+              <div class="instructionsThirds">3. When you harvest, share 20% of the goodies with the parcel owner and keep the rest for yourself!</div>
+              <div class="instructionsGoBack">
+                <a onclick="$('.farmer-instructions').hide(); $('.self-select').show();"><<< Back</a>
+              </div>
+
             </div>
           </div>
         </div>

@@ -1,9 +1,20 @@
+h1 {
+    font-size: 20px;
+}
+
 .header {
     padding: 20px 0;
 }
 
 .logospace {
     margin-left: 50px;
+    font-size: 24px;
+}
+
+.logo {
+    margin-bottom: 0px; 
+    margin-left: 10px; 
+    display: inline;
 }
 
 .loginbuttons {
@@ -13,18 +24,45 @@
 
 .instructions {
     clear: both;
-    background-color: #ddd;
     height: 120px;
     text-align: center;
     width: 100%;
+    border-bottom: dashed 1px #afcd49;
+    padding-bottom: 20px;
 }
 
+.tagline {
+    text-align: center;
+    text-shadow: 0 0 0.2em #afcd49;
+    padding-top: 20px;
+}
 .instructions .btn{
     display: inline-block;
 }
 
 .instructions .divider{
     display: inline-block;
+    font-size: 18px;
+    color: #afcd49;
+}
+
+.instructions .instructionsThirds {
+    display: inline-block;
+    width: 220px;
+    margin: 0px 10px;
+}
+
+.instructions .instructionsGoBack {
+    float: left;
+    margin-left: 50px;
+}
+
+.instructions .left {
+    float: left;
+}
+
+.instructions .right {
+    float: right;
 }
 
 .details {
@@ -127,3 +165,4 @@ input.chosen {
 .green {
     color: #afcd49;
 }
+
