@@ -125,6 +125,17 @@ Meteor.methods({
         Parties.update(
           {_id: partyId, "rsvps.user": this.userId},
           {$set: {"rsvps.$.rsvp": rsvp}});
+
+    var party = Parties.findOne(partyId);
+      var to = contactEmail(Meteor.users.findOne(party.owner));
+        Email.send({
+          from: "noreply@parcel",
+          to: to,
+          replyTo: "noreply@parcel",
+          subject: "I signed up for your garden",
+          text: "Hey I signed up for your garden"
+        });
+
       } else {
         // minimongo doesn't yet support $ in modifier. as a temporary
         // workaround, make a modifier that uses an index. this is
