@@ -61,11 +61,11 @@ input.chosen {
 }
 
 .map circle.farming {
-    fill: green;
+    fill: #afcd49;
 }
 
 .map circle.idle {
-    fill: blue;
+    fill: #49AFCD;
 }
 
 .map text {
