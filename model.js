@@ -135,9 +135,9 @@ Meteor.methods({
               Email.send({
                   from: "noreply@parcel",
                   to: to,
-                  replyTo: "noreply@parcel",
-                  subject: "I signed up for your garden",
-                  text: "Hey I signed up for your garden"
+                  replyTo: "noreply@parcel.com",
+                  subject: "Someone signed up for your garden",
+                  text: "Someone signed up for your garden. Check out the website to see who it is!"
               });
           }
 
