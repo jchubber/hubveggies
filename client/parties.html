@@ -88,20 +88,14 @@
             {{#if farmOwner}}
               You posted this farm. Thank you for being a part of Kendall Square Farms! 
             {{else}}
-              {{#if user_farms_this_farm}}
-<!--            <input type="button" value="Maybe"
-                   class="btn btn-small rsvp_maybe {{maybeChosen "maybe"}}">!-->
-                <input type="button" value="Stop farming this land." class="btn rsvp_no {{maybeChosen "no"}}">
-              {{else}}
                 <input type="button" value="Farm this land" class="btn btn-success rsvp_yes {{maybeChosen "yes"}}">
-              {{/if}}
+                <input type="button" value="Stop farming this land." class="btn rsvp_no {{maybeChosen "no"}}">
             <p><small>Posted by {{creatorName}}</small></p>
             {{/if}}
           {{else}}
             <i>Sign in to grow veggies on this garden.</i>
           {{/if}}
         </div>
-{{attending}}
         {{> attendance}}
 
         {{#if canRemove}}
