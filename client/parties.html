@@ -125,13 +125,13 @@
       <div>
         {{rsvpName}}
         {{#if rsvpIs "yes"}}
-          <span class="label label-success pull-right">Going</span>
+          <span class="label label-success pull-right">Currently farming</span>
         {{/if}}
         {{#if rsvpIs "maybe"}}
           <span class="label label-info pull-right">Maybe</span>
         {{/if}}
         {{#if rsvpIs "no"}}
-          <span class="label label pull-right">No</span>
+          <span class="label label pull-right">Not farming</span>
         {{/if}}
       </div>
     {{/each}}
