@@ -55,9 +55,9 @@ Meteor.methods({
            options.description.length &&
            typeof options.x === "number" && options.x >= 0 && options.x <= 1 &&
            typeof options.y === "number" && options.y >= 0 && options.y <= 1))
-      throw new Meteor.Error(400, "Required parameter missing");
+      throw new Meteor.Error(400, "Missing some information");
     if (options.title.length > 100)
-      throw new Meteor.Error(413, "Title too long");
+      throw new Meteor.Error(413, "Location too long");
     if (options.description.length > 1000)
       throw new Meteor.Error(413, "Description too long");
     if (! this.userId)
@@ -78,10 +78,10 @@ Meteor.methods({
   invite: function (partyId, userId) {
     var party = Parties.findOne(partyId);
     if (! party || party.owner !== this.userId)
-      throw new Meteor.Error(404, "No such party");
+      throw new Meteor.Error(404, "No such garden");
     if (party.public)
       throw new Meteor.Error(400,
-                             "That party is public. No need to invite people.");
+                             "That garden is public. No need to invite people.");
     if (userId !== party.owner && ! _.contains(party.invited, userId)) {
       Parties.update(partyId, { $addToSet: { invited: userId } });
 
@@ -94,9 +94,9 @@ Meteor.methods({
           from: "noreply@example.com",
           to: to,
           replyTo: from || undefined,
-          subject: "PARTY: " + party.title,
+          subject: "GARDEN: " + party.title,
           text:
-"Hey, I just invited you to '" + party.title + "' on All Tomorrow's Parties." +
+"Hey, I just invited you to '" + party.title + "' on All Gardens." +
 "\n\nCome check it out: " + Meteor.absoluteUrl() + "\n"
         });
       }
@@ -105,16 +105,16 @@ Meteor.methods({
 
   rsvp: function (partyId, rsvp) {
     if (! this.userId)
-      throw new Meteor.Error(403, "You must be logged in to RSVP");
+      throw new Meteor.Error(403, "You must be logged in to farm this garden.");
     if (! _.contains(['yes', 'no', 'maybe'], rsvp))
-      throw new Meteor.Error(400, "Invalid RSVP");
+      throw new Meteor.Error(400, "Invalid request");
     var party = Parties.findOne(partyId);
     if (! party)
-      throw new Meteor.Error(404, "No such party");
+      throw new Meteor.Error(404, "No such garden");
     if (! party.public && party.owner !== this.userId &&
         !_.contains(party.invited, this.userId))
       // private, but let's not tell this to the user
-      throw new Meteor.Error(403, "No such party");
+      throw new Meteor.Error(403, "No such garden");
 
     var rsvpIndex = _.indexOf(_.pluck(party.rsvps, 'user'), this.userId);
     if (rsvpIndex !== -1) {

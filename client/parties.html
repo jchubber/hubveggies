@@ -1,5 +1,5 @@
 <head>
-  <title>All Tomorrow's Parties</title>
+  <title>HubVeggies</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -23,7 +23,7 @@
       <div class="span10">
         <div class="header row">
           <div class="span5">
-            <h3 style="margin-bottom: 0px">All Tomorrow's Parties</h3>
+            <h3 style="margin-bottom: 0px">All Gardens</h3>
           </div>
           <div class="span5">
             <div style="float: right">
@@ -81,22 +81,21 @@
 
         <div class="rsvp-buttons">
           {{#if currentUser}}
-            <input type="button" value="I'm going!"
+            <input type="button" value="I'm farming!"
                    class="btn btn-small rsvp_yes {{maybeChosen "yes"}}">
             <input type="button" value="Maybe"
                    class="btn btn-small rsvp_maybe {{maybeChosen "maybe"}}">
             <input type="button" value="No"
                    class="btn btn-small rsvp_no {{maybeChosen "no"}}">
           {{else}}
-            <i>Sign in to RSVP for this party.</i>
+            <i>Sign in to grow veggies on this garden.</i>
           {{/if}}
           <p><small>Posted by {{creatorName}}</small></p>
         </div>
 
         {{#if canRemove}}
           <div class="alert alert-info"><small>
-              You posted this party and nobody is signed up to go, so if
-              you like, you could
+              You posted this garden and nobody is signed up to farm it, so if you like, you could
               <b><a href="#" class="remove">delete this listing</a></b>.
           </small></div>
         {{/if}}
@@ -104,9 +103,9 @@
     {{else}}
       <h1 class="muted pagination-centered">
         {{#if anyParties}}
-          Click a party to select it
+          Click a garden to select it
         {{else}}
-          Sign in and double click the map to post a party
+          Sign in and double click the map to add your garden
         {{/if}}
       </h1>
     {{/if}}
@@ -164,7 +163,7 @@
   <div class="modal">
     <div class="modal-header">
       <button type="button" class="close cancel">&times;</button>
-      <h3>Add party</h3>
+      <h3>Add garden</h3>
     </div>
 
     <div class="modal-body">
@@ -175,18 +174,19 @@
       <label>Title</label>
       <input type="text" class="title span5">
 
-      <label>Description</label>
+      <label>Any vegetable preferences?</label>
       <textarea class="description span5"></textarea>
 
-      <label class="checkbox">
+<!--      <label class="checkbox">
         <input type="checkbox" class="private">
         Private party &mdash; invitees only
       </label>
+!-->
     </div>
 
     <div class="modal-footer">
       <a href="#" class="btn cancel">Cancel</a>
-      <a href="#" class="btn btn-primary save">Add party</a>
+      <a href="#" class="btn btn-primary save">Add garden</a>
     </div>
   </div>
 </template>
