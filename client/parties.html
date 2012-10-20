@@ -70,11 +70,11 @@
 </template>
 
 <template name="details">
-  <div class="details">
+  <div class="well well-small">
     {{#if party}}
       {{#with party}}
-        <h1>{{title}}</h1>
-        <div class="postedby"><em class="light">Posted by:</em> {{creatorName}}</div>
+        <h3>{{title}}</h3>
+        <div class="postedby"><small>Posted by:</em> {{creatorName}}</small></div>
         <div class="description"><em class="light">About this parcel:</em> {{description}}</div>
         <div class="dreamveggies"><em class="light">Special requests:</em> {{dreamveggies}}</div>
 
@@ -113,7 +113,7 @@
 </template>
 
 <template name="attendance">
-  <div class="attendance well well-small">
+  <div class="attendance">
     <div class="muted who"><b>Farmers working this land</b></div>
     {{#if rsvps}}
     {{#each rsvps}}
