@@ -27,7 +27,7 @@
               <i class="icon-leaf icon-large green"></i>
             </span>
             <h1 style="margin-bottom: 0px; margin-left: 15px; display: inline;"><span class="green">Parcel</span>KendallSq</h1>
-            <h4>Let your green thumb roam in a backyard near you.</h4>
+            <h4>Connecting idle gardens and eager green thumbs.</h4>
           </div>
           <div class="span5">
             <div style="float: right">
@@ -60,7 +60,7 @@
 <template name="map">
   <div class="map">
     {{#constant}}
-      <svg width="500" height="500">
+      <svg width="760" height="500">
         <circle class="callout" cx=-100 cy=-100></circle>
         <g class="circles"></g>
         <g class="labels"></g>
@@ -163,7 +163,7 @@
   <div class="modal">
     <div class="modal-header">
       <button type="button" class="close cancel">&times;</button>
-      <h3>Add garden</h3>
+      <h3>Add an available parcel</h3>
     </div>
 
     <div class="modal-body">
@@ -171,11 +171,14 @@
         <div class="alert alert-error">{{error}}</div>
       {{/if}}
 
-      <label>Give your garden a name!</label>
+      <label>Give your parcel a name!</label>
       <input type="text" class="title span5">
 
-      <label>What kind of veggies would you want to see farmed in your garden?</label>
+      <label>About this parcel?</label>
       <textarea class="description span5"></textarea>
+
+      <label>What kind of veggies would you want to see farmed in your garden?</label>
+      <textarea class="dreamveggies span5"></textarea>
 
       <label class="checkbox">
         <input type="checkbox" class="private">
@@ -185,7 +188,7 @@
 
     <div class="modal-footer">
       <a href="#" class="btn cancel">Cancel</a>
-      <a href="#" class="btn btn-primary save">Add garden</a>
+      <a href="#" class="btn btn-primary save">Add parcel</a>
     </div>
   </div>
 </template>

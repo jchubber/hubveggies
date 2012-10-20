@@ -24,7 +24,7 @@ Parties.allow({
       if (userId !== party.owner)
         return false; // not the owner
 
-      var allowed = ["title", "description", "x", "y"];
+      var allowed = ["title", "description", "dreamveggies", "x", "y"];
       if (_.difference(fields, allowed).length)
         return false; // tried to write to forbidden field
 
@@ -53,13 +53,15 @@ Meteor.methods({
     if (! (typeof options.title === "string" && options.title.length &&
            typeof options.description === "string" &&
            options.description.length &&
-           typeof options.x === "number" && options.x >= 0 && options.x <= 1 &&
+           typeof options.x === "number" && options.x >= 0 && options.x <= 1.5 &&
            typeof options.y === "number" && options.y >= 0 && options.y <= 1))
       throw new Meteor.Error(400, "Missing some information");
     if (options.title.length > 100)
       throw new Meteor.Error(413, "Location too long");
     if (options.description.length > 1000)
       throw new Meteor.Error(413, "Description too long");
+    if (options.dreamveggies.length > 1000)
+      throw new Meteor.Error(413, "Dream veggies too long");
     if (! this.userId)
       throw new Meteor.Error(403, "You must be logged in");
 
@@ -69,6 +71,7 @@ Meteor.methods({
       y: options.y,
       title: options.title,
       description: options.description,
+      dreamveggies: options.dreamveggies, 
       public: !! options.public,
       invited: [],
       rsvps: []

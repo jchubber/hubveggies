@@ -122,7 +122,7 @@ Template.map.events({
     Session.set("selected", event.currentTarget.id);
   },
   'dblclick .map': function (event, template) {
-    if (! Meteor.userId()) // must be logged in to create events
+    if (! Meteor.userId()) // must be logged in to add parcels
       return;
     var coords = coordsRelativeToElement(event.currentTarget, event);
     openCreateDialog(coords.x / 500, coords.y / 500);
@@ -221,13 +221,15 @@ Template.createDialog.events({
   'click .save': function (event, template) {
     var title = template.find(".title").value;
     var description = template.find(".description").value;
+    var dreamveggies = template.find(".dreamveggies").value;
     var public = ! template.find(".private").checked;
     var coords = Session.get("createCoords");
 
-    if (title.length && description.length) {
+    if (title.length && description.length && dreamveggies.length) {
       Meteor.call('createParty', {
         title: title,
         description: description,
+        dreamveggies: dreamveggies,
         x: coords.x,
         y: coords.y,
         public: public
@@ -241,7 +243,7 @@ Template.createDialog.events({
       Session.set("showCreateDialog", false);
     } else {
       Session.set("createError",
-                  "It needs a title and a description, or why bother?");
+                  "It needs a title, a description, and a set of veggies or why bother?");
     }
   },
 
