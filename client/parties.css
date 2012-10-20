@@ -42,12 +42,19 @@ input.chosen {
     font-weight: bold;
 }
 
+#mapcontainer {
+    width: 100%;
+    text-align: center;
+}
+
 .map {
-    position: relative;
     background-image: url('/cambridge.png');
-    background-position: -20px -20px;
-    width: 500px;
+    background-position: 0;
+    width: 1258px;
     height: 500px;
+}
+
+#rightpanel {
 }
 
 .map circle.public {

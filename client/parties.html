@@ -33,7 +33,7 @@
         </div>
 
         <div class="row">
-          <div class="span6">
+          <div class="span6" id="mapcontainer">
             {{> map}}
             {{#if currentUser}}
             <div class="pagination-centered">
@@ -41,7 +41,7 @@
             </div>
             {{/if}}
           </div>
-          <div class="span4">
+          <div class="span4" id="rightpanel">
             {{> details}}
           </div>
         </div>
