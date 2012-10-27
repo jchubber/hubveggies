@@ -22,6 +22,18 @@ h1 {
     padding-right: 200px;
 }
 
+#login-buttons #login-buttons-twitter {
+    background-color: #AFCD49;
+    background-image: none;
+    border-color: #849e2b; 
+}
+
+#login-buttons #login-buttons-password {
+    background-color: #AFCD49;
+    background-image: none;
+    border-color: #849e2b; 
+}
+
 .instructions {
     clear: both;
     height: 120px;
